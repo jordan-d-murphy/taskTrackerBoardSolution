@@ -15,14 +15,14 @@ namespace taskTrackerBoardProject.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Task Tracker application";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "This is a contact page.";
 
             return View();
         }
