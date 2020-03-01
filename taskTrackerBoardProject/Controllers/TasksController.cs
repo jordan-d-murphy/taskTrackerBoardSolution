@@ -68,7 +68,7 @@ namespace taskTrackerBoardProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag")] Task task)
+        public ActionResult Create([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag,CurrentStatus")] Task task)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +100,7 @@ namespace taskTrackerBoardProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag")] Task task)
+        public ActionResult Edit([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag,CurrentStatus")] Task task)
         {
             if (ModelState.IsValid)
             {

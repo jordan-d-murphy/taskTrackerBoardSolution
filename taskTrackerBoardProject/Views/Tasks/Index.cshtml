@@ -33,6 +33,9 @@
                 @Html.DisplayNameFor(model => model.DueDate)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.CurrentStatus)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Tag)
             </th>
 
@@ -53,6 +56,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DueDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentStatus)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tag)

@@ -141,6 +141,10 @@
     <Compile Include="Migrations\202002292152176_addTagPropertyToTask.designer.cs">
       <DependentUpon>202002292152176_addTagPropertyToTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002292303546_AddStatusToTaskModel.cs" />
+    <Compile Include="Migrations\202002292303546_AddStatusToTaskModel.designer.cs">
+      <DependentUpon>202002292303546_AddStatusToTaskModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002292152176_addTagPropertyToTask.resx">
       <DependentUpon>202002292152176_addTagPropertyToTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002292303546_AddStatusToTaskModel.resx">
+      <DependentUpon>202002292303546_AddStatusToTaskModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
