@@ -145,6 +145,10 @@
     <Compile Include="Migrations\202002292303546_AddStatusToTaskModel.designer.cs">
       <DependentUpon>202002292303546_AddStatusToTaskModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003010041410_EditCreatedDateProperty.cs" />
+    <Compile Include="Migrations\202003010041410_EditCreatedDateProperty.designer.cs">
+      <DependentUpon>202003010041410_EditCreatedDateProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -218,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002292303546_AddStatusToTaskModel.resx">
       <DependentUpon>202002292303546_AddStatusToTaskModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003010041410_EditCreatedDateProperty.resx">
+      <DependentUpon>202003010041410_EditCreatedDateProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

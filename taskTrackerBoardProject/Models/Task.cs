@@ -19,14 +19,18 @@ namespace taskTrackerBoardProject.Models
 
     public class Task
     {
+        private DateTime _created = DateTime.Now;
+
         public int ID { get; set; }
+        [Required]
+        [StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
         public string Description { get; set; }
 
         [Display(Name = "Date Created")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get { return _created; } }
 
         [Display(Name = "Target Due Date")]
         [DataType(DataType.Date)]
