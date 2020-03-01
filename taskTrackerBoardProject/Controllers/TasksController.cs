@@ -58,9 +58,12 @@ namespace taskTrackerBoardProject.Controllers
         }
 
         // GET: Tasks/Create
-        public ActionResult Create()
+        public ActionResult Create(int boardId)
         {
-            return View();
+            Task t = new Task();
+            t.BoardID = boardId;
+            t.DueDate = DateTime.Now;
+            return View(t);
         }
 
         // POST: Tasks/Create
@@ -68,13 +71,13 @@ namespace taskTrackerBoardProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag,CurrentStatus")] Task task)
-        {
+        public ActionResult Create([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag,CurrentStatus,BoardID")] Task task)
+        {  
             if (ModelState.IsValid)
             {
                 db.Tasks.Add(task);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Boards", new { id = task.BoardID });
             }
 
             return View(task);
@@ -100,13 +103,15 @@ namespace taskTrackerBoardProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag,CurrentStatus")] Task task)
+        public ActionResult Edit([Bind(Include = "ID,Title,Description,CreatedDate,DueDate,Tag,CurrentStatus,BoardID")] Task task)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(task).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Details", "Boards", new { id = task.BoardID });
+
             }
             return View(task);
         }
@@ -134,7 +139,7 @@ namespace taskTrackerBoardProject.Controllers
             Task task = db.Tasks.Find(id);
             db.Tasks.Remove(task);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Boards", new { id = task.BoardID });
         }
 
         protected override void Dispose(bool disposing)

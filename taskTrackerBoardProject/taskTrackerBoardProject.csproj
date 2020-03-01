@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BoardsController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
@@ -149,7 +150,12 @@
     <Compile Include="Migrations\202003010041410_EditCreatedDateProperty.designer.cs">
       <DependentUpon>202003010041410_EditCreatedDateProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003010143125_AddBoards.cs" />
+    <Compile Include="Migrations\202003010143125_AddBoards.designer.cs">
+      <DependentUpon>202003010143125_AddBoards.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Board.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -196,6 +202,11 @@
     <Content Include="Views\Tasks\Details.cshtml" />
     <Content Include="Views\Tasks\Edit.cshtml" />
     <Content Include="Views\Tasks\Index.cshtml" />
+    <Content Include="Views\Boards\Create.cshtml" />
+    <Content Include="Views\Boards\Delete.cshtml" />
+    <Content Include="Views\Boards\Details.cshtml" />
+    <Content Include="Views\Boards\Edit.cshtml" />
+    <Content Include="Views\Boards\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -225,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003010041410_EditCreatedDateProperty.resx">
       <DependentUpon>202003010041410_EditCreatedDateProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003010143125_AddBoards.resx">
+      <DependentUpon>202003010143125_AddBoards.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,3 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.board-cols-bordered {
+    border-right: 1px solid gray;
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.row {
+    overflow: hidden;
+}
+

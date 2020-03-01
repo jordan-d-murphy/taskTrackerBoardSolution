@@ -16,6 +16,7 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.BoardID)
 
     <div class="form-group">
         @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -69,7 +70,7 @@
 
 <div>
     @Html.ActionLink("Back to Detail", "Details", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Board", "Details", "Boards", new { id = Model.BoardID }, new { id = Model.BoardID })
 </div>
 
 @section Scripts {

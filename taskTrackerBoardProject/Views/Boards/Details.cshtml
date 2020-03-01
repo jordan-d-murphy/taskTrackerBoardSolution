@@ -1,0 +1,194 @@
+﻿@model taskTrackerBoardProject.Models.Board
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Board <b>| @Html.DisplayFor(model => model.Name)</b></h2>
+
+
+<div>
+    <p>
+        @Html.ActionLink("Add a New Task", "Create", "Tasks", new { boardId = Model.ID }, new { boardId = Model.ID }) &emsp;
+        @Html.ActionLink("Edit Board", "Edit", new { id = Model.ID }) &emsp;
+        @Html.ActionLink("View All Boards", "Index")
+    </p>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+
+        </dt>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Created Date
+                    </th>
+                    <th>
+                        Due Date
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Tag
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                @foreach (var item in Model.Tasks)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.DueDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.CurrentStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Tag)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+
+
+
+
+
+
+        <div class="row">
+
+            <div class="col-md-4 board-cols-bordered">
+                <h3><b>Upcoming</b></h3>
+
+                @foreach (var item in Model.Tasks)
+                {
+                    if (item.CurrentStatus == taskTrackerBoardProject.Models.Status.Upcoming)
+                    {
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <b><h3 class="panel-title">@Html.DisplayFor(model => item.Title)</h3></b>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => item.Description)<br /><br />
+                                <b>Created:</b> @Html.DisplayFor(model => item.CreatedDate) &emsp;
+                                <b>Due:</b> @Html.DisplayFor(model => item.DueDate)<br />
+                                <br />
+
+                                @if (!String.IsNullOrEmpty(item.Tag))
+                                {
+                                    <span class="pull-right label label-default"><b>@Html.DisplayFor(model => item.Tag)</b></span><br />
+                                }
+
+                                <b>@Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })</b>
+                                <span class="pull-right label label-primary"><b>@Html.DisplayFor(model => item.CurrentStatus)</b></span>
+                            </div>
+                        </div>
+
+                    }
+                }
+
+            </div>
+
+            <div class="col-md-4 board-cols-bordered">
+                <h3><b>Active</b></h3>
+
+                @foreach (var item in Model.Tasks)
+                {
+                    if (item.CurrentStatus == taskTrackerBoardProject.Models.Status.Active)
+                    {
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <b><h3 class="panel-title">@Html.DisplayFor(model => item.Title)</h3></b>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => item.Description)<br /><br />
+                                <b>Created:</b> @Html.DisplayFor(model => item.CreatedDate) &emsp;
+                                <b>Due:</b> @Html.DisplayFor(model => item.DueDate)<br />
+                                <br />
+
+                                @if (!String.IsNullOrEmpty(item.Tag))
+                                {
+                                    <span class="pull-right label label-default"><b>@Html.DisplayFor(model => item.Tag)</b></span><br />
+                                }
+
+                                <b>@Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })</b>
+                                <span class="pull-right label label-success"><b>@Html.DisplayFor(model => item.CurrentStatus)</b></span>
+                            </div>
+                        </div>
+
+                    }
+                }
+
+
+            </div>
+
+            <div class="col-md-4">
+                <h3><b>Completed</b></h3>
+
+                @foreach (var item in Model.Tasks)
+                {
+                    if (item.CurrentStatus == taskTrackerBoardProject.Models.Status.Completed)
+                    {
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <b><h3 class="panel-title">@Html.DisplayFor(model => item.Title)</h3></b>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => item.Description)<br /><br />
+                                <b>Created:</b> @Html.DisplayFor(model => item.CreatedDate) &emsp;
+                                <b>Due:</b> @Html.DisplayFor(model => item.DueDate)<br />
+                                <br />
+
+                                @if (!String.IsNullOrEmpty(item.Tag))
+                                {
+                                    <span class="pull-right label label-default"><b>@Html.DisplayFor(model => item.Tag)</b></span><br />
+                                }
+
+                                <b>@Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })</b>
+                                <span class="pull-right label label-info"><b>@Html.DisplayFor(model => item.CurrentStatus)</b></span>
+                            </div>
+                        </div>
+
+                    }
+                }
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </dl>
+</div>
