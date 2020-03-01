@@ -23,10 +23,13 @@ textarea {
     max-width: 280px;
 }
 
-.board-cols-bordered {
-    border-right: 1px solid gray;
+.board-cols {
     margin-bottom: -99999px;
     padding-bottom: 99999px;
+}
+
+.board-cols-bordered {
+    border-right: 1px solid gray;
 }
 
 .row {

@@ -84,7 +84,7 @@
 
         <div class="row">
 
-            <div class="col-md-4 board-cols-bordered">
+            <div class="col-md-4 board-cols board-cols-bordered droppable" id="upcoming">
                 <h3><b>Upcoming</b></h3>
 
                 @foreach (var item in Model.Tasks)
@@ -92,7 +92,7 @@
                     if (item.CurrentStatus == taskTrackerBoardProject.Models.Status.Upcoming)
                     {
 
-                        <div class="panel panel-default">
+                        <div class="panel panel-default card draggable" id="@item.ID">
                             <div class="panel-heading">
                                 <b><h3 class="panel-title">@Html.DisplayFor(model => item.Title)</h3></b>
                             </div>
@@ -117,7 +117,7 @@
 
             </div>
 
-            <div class="col-md-4 board-cols-bordered">
+            <div class="col-md-4 board-cols board-cols-bordered droppable" id="active">
                 <h3><b>Active</b></h3>
 
                 @foreach (var item in Model.Tasks)
@@ -125,7 +125,7 @@
                     if (item.CurrentStatus == taskTrackerBoardProject.Models.Status.Active)
                     {
 
-                        <div class="panel panel-default">
+                        <div class="panel panel-default card draggable" id="@item.ID">
                             <div class="panel-heading">
                                 <b><h3 class="panel-title">@Html.DisplayFor(model => item.Title)</h3></b>
                             </div>
@@ -151,7 +151,7 @@
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 board-cols droppable" id="completed">
                 <h3><b>Completed</b></h3>
 
                 @foreach (var item in Model.Tasks)
@@ -159,7 +159,7 @@
                     if (item.CurrentStatus == taskTrackerBoardProject.Models.Status.Completed)
                     {
 
-                        <div class="panel panel-default">
+                        <div class="panel panel-default card draggable" id="@item.ID">
                             <div class="panel-heading">
                                 <b><h3 class="panel-title">@Html.DisplayFor(model => item.Title)</h3></b>
                             </div>
@@ -192,3 +192,8 @@
 
     </dl>
 </div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/site")
+}
