@@ -84,7 +84,7 @@
 
         <div class="row">
 
-            <div class="col-md-4 board-cols board-cols-bordered droppable" id="upcoming">
+            <div class="col-md-4 board-cols board-cols-bordered droppable" id="Upcoming">
                 <h3><b>Upcoming</b></h3>
 
                 @foreach (var item in Model.Tasks)
@@ -108,7 +108,7 @@
                                 }
 
                                 <b>@Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })</b>
-                                <span class="pull-right label label-primary"><b>@Html.DisplayFor(model => item.CurrentStatus)</b></span>
+                                <span class="pull-right label label-primary"><b class="status-label">@Html.DisplayFor(model => item.CurrentStatus)</b></span>
                             </div>
                         </div>
 
@@ -117,7 +117,7 @@
 
             </div>
 
-            <div class="col-md-4 board-cols board-cols-bordered droppable" id="active">
+            <div class="col-md-4 board-cols board-cols-bordered droppable" id="Active">
                 <h3><b>Active</b></h3>
 
                 @foreach (var item in Model.Tasks)
@@ -141,7 +141,7 @@
                                 }
 
                                 <b>@Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })</b>
-                                <span class="pull-right label label-success"><b>@Html.DisplayFor(model => item.CurrentStatus)</b></span>
+                                <span class="pull-right label label-success"><b class="status-label">@Html.DisplayFor(model => item.CurrentStatus)</b></span>
                             </div>
                         </div>
 
@@ -151,7 +151,7 @@
 
             </div>
 
-            <div class="col-md-4 board-cols droppable" id="completed">
+            <div class="col-md-4 board-cols droppable" id="Completed">
                 <h3><b>Completed</b></h3>
 
                 @foreach (var item in Model.Tasks)
@@ -175,7 +175,7 @@
                                 }
 
                                 <b>@Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })</b>
-                                <span class="pull-right label label-info"><b>@Html.DisplayFor(model => item.CurrentStatus)</b></span>
+                                <span class="pull-right label label-info"><b class="status-label">@Html.DisplayFor(model => item.CurrentStatus)</b></span>
                             </div>
                         </div>
 

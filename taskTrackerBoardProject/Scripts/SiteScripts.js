@@ -6,19 +6,32 @@
         });
         $(".droppable").droppable({
             drop: function (event, ui) {
-                console.log("dragged element " + ui.draggable.attr("id") +
-                    " onto target droppable element " + $(this).attr("id") +
-                    " -> ready to pass to controller and reload page");
+                $.ajax({
+                    type: "POST",
+                    url: "/Tasks/UpdateStatusAjax",
+                    contentType: "application/json; charset=utf-8",
+                    data: "{'taskID':'" + ui.draggable.attr("id") + "', 'newStatus':'" + $(this).attr("id") + "'}",
+                    dataType: "json",
+                    success: function (result) {
+                        console.log('Success from ajax call! data result -> ');
+                        console.log(result);
 
-                $.post('/Tasks/Edit',
-                    {
-                        ID: ui.draggable.attr("id"),
-                        CurrentStatus: $(this).attr("id")
+
+                        var card = $("#" + ui.draggable.attr("id"));
+                        card.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+                        card.css("background-color", "red");
+
+                        //var statusLabel = container.find("b.status-label");
+                        //statusLabel = result.newStatus;
+                        //var content = container.innerHTML;
+                        //container.innerHTML = content; 
+                        //console.log("REFRESHED????");
+
                     },
-                    function (data) {
-
-                    console.log("Here is the return value -> " + data);
-
+                    error: function (xhr, status, error) {
+                        alert('No success from ajax call. xhr: '
+                            + xhr.responseText + "\n status: " + status + "\n error: " + error);
+                    }
                 });
 
             }

@@ -116,6 +116,24 @@ namespace taskTrackerBoardProject.Controllers
             return View(task);
         }
 
+        [HttpPost]
+        public JsonResult UpdateStatusAjax(int? taskID, string newStatus)
+        {
+            if (taskID == null || newStatus == null)
+            {
+                return Json(new { taskIDUpdated = "Error", newTaskStatus = "Error" });
+            }
+            Task task = db.Tasks.Find(taskID);
+            if (task == null)
+            {
+                return Json(new { taskIDUpdated = "Error", newTaskStatus = "Error" });
+            }
+            task.CurrentStatus = (Status) Enum.Parse(typeof(Status), newStatus);
+            db.Entry(task).State = EntityState.Modified;
+            db.SaveChanges();
+            return Json(new { taskIDUpdated = taskID, newTaskStatus = newStatus });
+        }
+
         // GET: Tasks/Delete/5
         public ActionResult Delete(int? id)
         {
