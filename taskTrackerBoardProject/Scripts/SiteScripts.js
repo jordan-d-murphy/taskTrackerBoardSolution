@@ -28,14 +28,14 @@
                         //                ALSO WORKING           and possibly better...
                         var column = $("#" + result.newTaskStatus);
                         var card = $("#" + ui.draggable.attr("id"));
-                        card.remove();
+                        card.remove(); //  .detach()  is an alternative....
                         column.load(" #" + result.newTaskStatus + " > *");
                         //
 
 
 
                         //$(".droppable").droppable();
-                        //$(".draggable").draggable();
+                        $('.draggable').droppable('enable');
 
 
                     },
