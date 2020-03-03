@@ -17,15 +17,26 @@
                         console.log(result);
 
 
-                        var card = $("#" + ui.draggable.attr("id"));
-                        card.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-                        card.css("background-color", "red");
+                        
 
-                        //var statusLabel = container.find("b.status-label");
-                        //statusLabel = result.newStatus;
-                        //var content = container.innerHTML;
-                        //container.innerHTML = content; 
-                        //console.log("REFRESHED????");
+                        //              WORKING
+                        //var card = $("#" + ui.draggable.attr("id"));
+                        //card.load(" #" + ui.draggable.attr("id") + " > *");
+                        //
+
+
+                        //                ALSO WORKING           and possibly better...
+                        var column = $("#" + result.newTaskStatus);
+                        var card = $("#" + ui.draggable.attr("id"));
+                        card.remove();
+                        column.load(" #" + result.newTaskStatus + " > *");
+                        //
+
+
+
+                        //$(".droppable").droppable();
+                        //$(".draggable").draggable();
+
 
                     },
                     error: function (xhr, status, error) {
@@ -34,6 +45,8 @@
                     }
                 });
 
+                
+               
             }
         });
     });
