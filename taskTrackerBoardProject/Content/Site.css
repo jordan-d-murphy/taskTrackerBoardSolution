@@ -26,13 +26,21 @@ textarea {
 .board-cols {
     margin-bottom: -99999px;
     padding-bottom: 99999px;
+    
 }
 
 .board-cols-bordered {
-    border-right: 1px solid gray;
+    border-right: 2px solid #eeeeee;
+}
+
+.board-links {
+    padding-top: 30px;
+}
+
+.draggable.ui-draggable-dragging {
+    box-shadow: 5px 10px 15px #888888;
 }
 
 .row {
     overflow: hidden;
 }
-

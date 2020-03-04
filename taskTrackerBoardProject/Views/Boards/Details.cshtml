@@ -4,88 +4,23 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Board <b>| @Html.DisplayFor(model => model.Name)</b></h2>
-
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Board <b>| @Html.DisplayFor(model => model.Name)</b></h2>
+        </div>
+        <div class="col-md-8 board-links">
+            @Html.ActionLink("Add a New Task", "Create", "Tasks", new { boardId = Model.ID }, new { boardId = Model.ID }) &emsp;
+            @Html.ActionLink("Edit Board", "Edit", new { id = Model.ID }) &emsp;
+            @Html.ActionLink("View All Boards", "Index")
+        </div>
+    </div>
 
 <div>
-    <p>
-        @Html.ActionLink("Add a New Task", "Create", "Tasks", new { boardId = Model.ID }, new { boardId = Model.ID }) &emsp;
-        @Html.ActionLink("Edit Board", "Edit", new { id = Model.ID }) &emsp;
-        @Html.ActionLink("View All Boards", "Index")
-    </p>
-
-    <hr />
-    <dl class="dl-horizontal">
-
-
-        <dt>
-
-        </dt>
-
-        <dd>
-            <table class="table">
-                <tr>
-                    <th>
-                        Title
-                    </th>
-                    <th>
-                        Description
-                    </th>
-                    <th>
-                        Created Date
-                    </th>
-                    <th>
-                        Due Date
-                    </th>
-                    <th>
-                        Status
-                    </th>
-                    <th>
-                        Tag
-                    </th>
-                    <th>
-
-                    </th>
-                </tr>
-                @foreach (var item in Model.Tasks)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(model => item.Title)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => item.Description)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => item.CreatedDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => item.DueDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => item.CurrentStatus)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => item.Tag)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", "Tasks", new { id = item.ID }, new { boardId = Model.ID })
-                        </td>
-                    </tr>
-                }
-            </table>
-        </dd>
-
-
-
-
-
-
 
         <div class="row">
 
             <div class="col-md-4 board-cols board-cols-bordered droppable" id="Upcoming">
-                <h3><b>Upcoming</b></h3>
+                <h4><b>Upcoming</b></h4>
 
                 @foreach (var item in Model.Tasks)
                 {
@@ -118,7 +53,7 @@
             </div>
 
             <div class="col-md-4 board-cols board-cols-bordered droppable" id="Active">
-                <h3><b>Active</b></h3>
+                <h4><b>Active</b></h4>
 
                 @foreach (var item in Model.Tasks)
                 {
@@ -152,7 +87,7 @@
             </div>
 
             <div class="col-md-4 board-cols droppable" id="Completed">
-                <h3><b>Completed</b></h3>
+                <h4><b>Completed</b></h4>
 
                 @foreach (var item in Model.Tasks)
                 {
@@ -189,8 +124,6 @@
 
 
 
-
-    </dl>
 </div>
 @section scripts
 {

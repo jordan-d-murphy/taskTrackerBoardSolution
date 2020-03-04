@@ -2,7 +2,7 @@
     console.log("Loaded site scripts for drag and drop!");
     $(function () {
         $(".draggable").draggable({
-            zIndex: 100
+            zIndex: 100,
         });
         $(".droppable").droppable({
             drop: function (event, ui) {
@@ -25,17 +25,14 @@
                         //
 
 
-                        //                ALSO WORKING           and possibly better...
+                        //                CURRENT WORKING           
                         var column = $("#" + result.newTaskStatus);
                         var card = $("#" + ui.draggable.attr("id"));
                         card.remove(); //  .detach()  is an alternative....
                         column.load(" #" + result.newTaskStatus + " > *");
                         //
-
-
-
-                        //$(".droppable").droppable();
-                        $('.draggable').droppable('enable');
+                        location.reload();
+                        
 
 
                     },
