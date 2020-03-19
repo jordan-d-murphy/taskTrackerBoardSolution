@@ -1,0 +1,2 @@
+﻿This file's purpose is to make sure the App_Data directory is tracked in git to 
+avoid problems due to a missing App_Data directory when cloning the project.

@@ -7,13 +7,13 @@ namespace taskTrackerBoardProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class addTagPropertyToTask : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addTagPropertyToTask));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002292152176_addTagPropertyToTask"; }
+            get { return "202003190344409_init"; }
         }
         
         string IMigrationMetadata.Source

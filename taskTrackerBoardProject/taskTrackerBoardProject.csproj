@@ -134,25 +134,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002291840391_InitialCreate.cs" />
-    <Compile Include="Migrations\202002291840391_InitialCreate.designer.cs">
-      <DependentUpon>202002291840391_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002292152176_addTagPropertyToTask.cs" />
-    <Compile Include="Migrations\202002292152176_addTagPropertyToTask.designer.cs">
-      <DependentUpon>202002292152176_addTagPropertyToTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002292303546_AddStatusToTaskModel.cs" />
-    <Compile Include="Migrations\202002292303546_AddStatusToTaskModel.designer.cs">
-      <DependentUpon>202002292303546_AddStatusToTaskModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003010041410_EditCreatedDateProperty.cs" />
-    <Compile Include="Migrations\202003010041410_EditCreatedDateProperty.designer.cs">
-      <DependentUpon>202003010041410_EditCreatedDateProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003010143125_AddBoards.cs" />
-    <Compile Include="Migrations\202003010143125_AddBoards.designer.cs">
-      <DependentUpon>202003010143125_AddBoards.cs</DependentUpon>
+    <Compile Include="Migrations\202003190344409_init.cs" />
+    <Compile Include="Migrations\202003190344409_init.designer.cs">
+      <DependentUpon>202003190344409_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Board.cs" />
@@ -160,6 +144,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\commitAppDataDir.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -252,9 +237,7 @@
     <Content Include="Views\Boards\Edit.cshtml" />
     <Content Include="Views\Boards\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -269,20 +252,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002291840391_InitialCreate.resx">
-      <DependentUpon>202002291840391_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002292152176_addTagPropertyToTask.resx">
-      <DependentUpon>202002292152176_addTagPropertyToTask.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002292303546_AddStatusToTaskModel.resx">
-      <DependentUpon>202002292303546_AddStatusToTaskModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003010041410_EditCreatedDateProperty.resx">
-      <DependentUpon>202003010041410_EditCreatedDateProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003010143125_AddBoards.resx">
-      <DependentUpon>202003010143125_AddBoards.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003190344409_init.resx">
+      <DependentUpon>202003190344409_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

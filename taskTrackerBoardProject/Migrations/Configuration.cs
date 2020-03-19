@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "taskTrackerBoardProject.Models.TaskDBContext";
         }
 
         protected override void Seed(taskTrackerBoardProject.Models.TaskDBContext context)
